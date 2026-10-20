@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>HDT_BG_AutoReconnect</AssemblyName>
+    <RootNamespace>BgAutoReconnect</RootNamespace>
+
+    <Version>1.0.0</Version>
+    <Product>HDT-BG-AutoReconnect</Product>
+    <AssemblyTitle>HDT-BG-AutoReconnect</AssemblyTitle>
+    <Description>Hearthstone Deck Tracker plugin: Battlegrounds reconnect button with an auto-reconnect toggle.</Description>
+    <Authors>MorganLee0108</Authors>
+    <Copyright>Copyright (c) 2026 MorganLee0108, Copyright (c) 2026 qxplays</Copyright>
+
+    <!-- Path to an installed Hearthstone Deck Tracker; override with -p:HdtDir=... -->
+    <HdtDir Condition="'$(HdtDir)' == ''">$(LOCALAPPDATA)\HearthstoneDeckTracker\current</HdtDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="HearthstoneDeckTracker">
+      <HintPath>$(HdtDir)\HearthstoneDeckTracker.exe</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="HearthDb">
+      <HintPath>$(HdtDir)\HearthDb.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="HearthMirror">
+      <HintPath>$(HdtDir)\HearthMirror.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
